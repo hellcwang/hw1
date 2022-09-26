@@ -1,4 +1,4 @@
-# ICD20 Homework1
+# ICD22 Homework1
 
 ## Docker
 
@@ -7,7 +7,7 @@ We provide a docker image for the environment, so you need install docker first.
 More details can be found on [docker website](https://docs.docker.com/get-docker/),
 and we provide part of Linux installation and Windows installation video here.
 
-- Linux: (Arch Linux)
+- Linux: (Arch Linux) (Recommend)
 ```bash
 sudo pacman -S docker # install the docker from package
 
@@ -19,16 +19,17 @@ gpasswd -a username docker # you should change the `username` into yours
 newgrp docker # update the newgroup
 ```
 
-- Linux: (Ubuntu)
+- Linux: (Ubuntu)(Recommend)
 ```bash
 sudo apt install docker.io
 
 sudo systemctl start docker
 sudo systemctl enable docker
 
-sudo usermod -aG docker username
+sudo usermod -aG docker $(whoami) # Add yourself to docker group 
+newgrp docker # update the newgroup
 
-# and re-login the system
+
 ```
 
 - Windows:
@@ -100,8 +101,17 @@ We have provided these commands in the Makefile, feel free to modify them accord
 
 # Test
 
+## Using docker(Recommend)
 You can use the command `make test` for testing, and we will use the original test case result as your score, but the `test/` dir will be replaced when grading.
 
+## Using github workflow
+You can clone the github repo to your github account. Github CI will help to test the result of your scanner everytime you commit to master.
+
+*Note: This is an alternative way for you to test your scanner which does not guarantee the result is the same as docker!!*
+
+# DEBUG
+
+You can use `./compare.sh` to find out the difference between your output and answer. Usage: `./compare.sh ({ID of the test case you wnat to see} | all)`
 
 # Submission
 
