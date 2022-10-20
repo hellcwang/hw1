@@ -1,5 +1,12 @@
 # ICD22 Homework1
 
+## Outline
+
+- [How to install and run docker](#docker)
+- [How to test your program](#test)
+- [How to Submit your homework](#submission)
+
+
 ## Docker
 
 We provide a docker image for the environment, so you need install docker first.
